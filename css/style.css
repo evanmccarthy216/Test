@@ -1,0 +1,7 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, Arial, sans-serif; display:flex; height:100vh; align-items:center; justify-content:center; margin:0; background:#111; color:#eee }
+.container { text-align:center }
+canvas { background:#0b2a2a; display:block; margin:10px auto; border:4px solid #064; }
+.score { margin-bottom:6px }
+.controls { font-size:0.9rem; color:#ccc; margin-top:6px }
+button { margin-top:8px; padding:8px 12px; font-size:1rem }
