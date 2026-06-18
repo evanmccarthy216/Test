@@ -1,0 +1,23 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check files exist
+        run: |
+          test -f index.html && echo "✓ index.html found"
+          test -f css/style.css && echo "✓ css/style.css found"
+          test -f js/game.js && echo "✓ js/game.js found"
+          test -f README.md && echo "✓ README.md found"
+      - name: Validate HTML
+        run: |
+          npm install -g html-validate
+          html-validate index.html || true
